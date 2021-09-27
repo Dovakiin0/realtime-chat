@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css"
+      integrity="sha512-braXHF1tCeb8MzPktmUHhrjZBSZknHvjmkUdkAbeqtIrWwCchhcpUeAf2Sq3yIq1Q1x5PlroafjceOUbIE3Q5g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Real Time Chat</title>
+  </head>
+  <body class="bg-gray-200">
+    <!-- This is login page -->
+    <div
+      class="
+        login
+        w-screen
+        h-screen
+        flex
+        justify-center
+        items-center
+        text-gray-500
+      "
+    >
+      <div class="text-center">
+        <h2 class="text-2xl uppercase my-5">RealTime Chat</h2>
+        <div class="flex justify-between m-5">
+          <h2 class="p-1 uppercase">Username:</h2>
+          <input type="text" class="username text-black rounded p-1" />
+        </div>
+        <div class="flex justify-between m-5">
+          <h2 class="p-1 uppercase">Room id:</h2>
+          <input type="text" class="roomid text-black rounded p-1" />
+        </div>
+        <div class="flex justify-around">
+          <button
+            class="
+              create-btn
+              bg-blue-400
+              p-2
+              rounded-3xl
+              shadow-2xl
+              text-gray-100
+              border-2
+              hover:border-blue-700
+            "
+            type="submit"
+          >
+            Create Room
+          </button>
+          <button
+            class="
+              join-btn
+              bg-red-400
+              p-2
+              rounded-3xl
+              shadow-2xl
+              text-gray-100
+              border-2
+              hover:border-red-700
+            "
+            type="submit"
+          >
+            Join Room
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- ends here -->
+
+    <!-- chat page starts here -->
+    <div class="chat h-screen w-screen flex justify-center items-center">
+      <div class="chat-window w-4/5 h-2/3 flex justify-between">
+        <div class="chat-left w-1/4">
+          <h2 class="chat-room-id flex">
+            Room id:
+            <p></p>
+          </h2>
+          <h2>Connected Users:</h2>
+          <div class="connected-users"></div>
+        </div>
+        <div class="chat-right flex-1 w-full">
+          <h2>Welcome to realtime Chat</h2>
+          <div class="message-box bg-white w-full h-5/6 my-5">
+            <div class="messages m-5 p-5"></div>
+          </div>
+          <div class="send-message flex justify-between">
+            <input
+              type="text"
+              class="message-input border-2 border-gray-400 w-4/5"
+            />
+            <button
+              class="send-msg-btn bg-blue-400 p-2 rounded-2xl text-white"
+              type="button"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ends here -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
